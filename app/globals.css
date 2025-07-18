@@ -12,6 +12,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
+.scroll-textarea {
+  scrollbar-width: thin;
+  scrollbar-color: #a78bfa transparent;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
