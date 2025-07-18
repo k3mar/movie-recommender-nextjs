@@ -1,3 +1,4 @@
+"use client";
 import { useRecommendation } from "@/context/RecommendationContext";
 import SearchError from "../assets/search-error.svg";
 

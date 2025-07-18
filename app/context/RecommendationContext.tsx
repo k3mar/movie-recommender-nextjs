@@ -1,3 +1,5 @@
+"use client";
+
 import usefetchRecommendation from "@/lib/UseFetchRecommendations";
 import { useQueryClient } from "@tanstack/react-query";
 import { createContext, useContext, type ReactNode } from "react";

@@ -1,3 +1,4 @@
+"use client";
 import { AspectRatio } from "./ui/aspect-ratio";
 import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
 import { Skeleton } from "./ui/skeleton";

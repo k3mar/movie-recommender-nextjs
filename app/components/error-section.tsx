@@ -1,3 +1,4 @@
+"use client";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import ErrorAnimation from "../assets/error.json";
 import { useRecommendation } from "@/context/RecommendationContext";

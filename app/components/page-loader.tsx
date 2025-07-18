@@ -1,3 +1,4 @@
+"use client";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { motion } from "motion/react";
 

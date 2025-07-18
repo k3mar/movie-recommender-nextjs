@@ -1,3 +1,5 @@
+"use client";
+
 import { useMutation, QueryClient } from "@tanstack/react-query";
 import type HttpError from "../model/HttpError";
 import type { RecommendationResponse, UserRequest } from "../model/Movies";

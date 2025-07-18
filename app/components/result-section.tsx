@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef } from "react";
 import ResultHeader from "./result-header";
 import Reason from "./reason";

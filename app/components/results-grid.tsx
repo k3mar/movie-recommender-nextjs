@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import type { Movie } from "../model/Movies";
 import { Rating } from "./rating";
@@ -86,7 +87,7 @@ export const ResultGrid = ({ movies }: Props) => {
               src={
                 movie.tmdb_metadata?.backdrop_path
                   ? TMDB_IMAGE_BASE_URL + movie.tmdb_metadata?.backdrop_path
-                  : NoImage
+                  : NoImage.src
               }
               alt={
                 movie.tmdb_metadata?.backdrop_path
@@ -122,7 +123,7 @@ export const ResultGrid = ({ movies }: Props) => {
                       movie.tmdb_metadata?.backdrop_path
                         ? TMDB_IMAGE_BASE_URL +
                           movie.tmdb_metadata?.backdrop_path
-                        : NoImage
+                        : NoImage.src
                     }
                     alt={
                       movie.tmdb_metadata?.backdrop_path
