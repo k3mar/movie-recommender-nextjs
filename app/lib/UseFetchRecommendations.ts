@@ -23,11 +23,12 @@ const usefetchRecommendation = (queryClient: QueryClient) => {
         const timeoutId = setTimeout(() => controller.abort(), 20000); // 10 sec
 
         const accessToken = session?.access_token;
+        console.log("Token", accessToken);
         const response = await fetch(API_BASE_URL + "/recommendation", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + (accessToken || ""),
+            Authorization: "Bearer " + (accessToken || "xyz"),
           },
           body: JSON.stringify(request),
           signal: controller.signal,
