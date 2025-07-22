@@ -14,8 +14,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import useDataStore from "@/lib/dataStore";
 import Summary from "./summary";
-import { supabase } from "@/lib/supabase/browserClient";
-import { toast } from "sonner";
 import { motion } from "motion/react";
 import { Menu } from "lucide-react";
 import DarkModeToggle from "./customized/switch/switch-dark-mode";

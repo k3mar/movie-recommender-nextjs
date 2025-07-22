@@ -63,7 +63,7 @@ function PromptInput({}: Props) {
           whileHover={{ scale: 1.1 }}
         >
           Match My Mood
-          <img src={Clapper} alt="movie clapper" className="w-5 h-5" />
+          <Clapper className="w-5 h-5" />
         </AninmatedButton>
       </form>
     </Form>

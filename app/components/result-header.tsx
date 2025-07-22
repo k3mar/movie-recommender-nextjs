@@ -10,7 +10,7 @@ const ResultHeader = ({}: ResultHeaderProps) => {
     <h2 className="flex justify-center gap-3  text-center text-3xl font-bold  mb-6 mt-4">
       {isError ? (
         <>
-          <img src={SearchError} alt="movie clapper" className="w-10" />
+          <SearchError className="w-10 h-10" />
           Trouble Casting Today’s Feature
         </>
       ) : (
