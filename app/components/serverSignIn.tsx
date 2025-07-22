@@ -42,14 +42,14 @@ const ServerSignIn = () => {
             <button
               type="submit"
               formAction={login}
-              className="w-1/2 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold"
+              className="w-1/2 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-transform transform hover:scale-105 active:scale-95"
             >
               Log in
             </button>
             <button
               type="submit"
               formAction={signup}
-              className="w-1/2 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white font-semibold"
+              className="w-1/2 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition-transform transform hover:scale-105 active:scale-95"
             >
               Sign up
             </button>
