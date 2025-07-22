@@ -133,7 +133,7 @@ export default function Hero({ className = "", ...props }: Props) {
                 <Button
                   type="submit"
                   onClick={handleSignOut}
-                  className="cursor-pointer hover:bg-blue-500/50 font-black text-blue-950 dark:text-white"
+                  className="cursor-pointer hover:bg-blue-500/50 font-black text-blue-950 dark:text-white mx-2"
                 >
                   Sign Out
                 </Button>
