@@ -4,7 +4,7 @@ import { useMutation, QueryClient } from "@tanstack/react-query";
 import type HttpError from "../model/HttpError";
 import type { RecommendationResponse, UserRequest } from "../model/Movies";
 import { API_BASE_URL } from "./constants";
-import { supabase } from "./supabaseClient";
+import { supabase } from "./supabase/browserClient";
 import { toast } from "sonner";
 import { format } from "date-fns";
 import { StatusCodes } from "http-status-codes";
