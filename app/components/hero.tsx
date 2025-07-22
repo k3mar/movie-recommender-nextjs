@@ -40,8 +40,9 @@ export default function Hero({ className = "", ...props }: Props) {
   const session = useDataStore((state) => state.session);
 
   const handleSignOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    toast.error(error?.message);
+    const res = await fetch("/api/signout", { method: "POST" });
+    window.location.href = "/signin";
+    // handle response
   };
 
   return (
