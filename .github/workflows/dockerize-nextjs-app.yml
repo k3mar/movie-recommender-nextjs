@@ -38,7 +38,10 @@ jobs:
 
           echo "🔧 Building Docker image: $IMAGE_URI"
 
-          docker build -t $IMAGE_URI .
+          docker build \ 
+            -t $IMAGE_URI:$IMAGE_TAG \
+            -t $IMAGE_URI:latest \
+            .
 
           echo "Pushing image to ECR..."
           docker push $IMAGE_URI:$IMAGE_TAG
