@@ -11,15 +11,16 @@ import { cn } from "@/lib/utils";
 import { useRecommendation } from "@/context/RecommendationContext";
 import JumpTo from "./jump-to";
 
-interface ResultSectionProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-const ResultSection = ({ className, ...props }: ResultSectionProps) => {
+const ResultSection = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => {
   const { data, isError, isPending } = useRecommendation();
   const resultRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     resultRef?.current?.scrollIntoView({ behavior: "smooth" });
-  }, [[data, isError, isPending]]);
+  }, [data, isError, isPending]);
 
   if (isError || data || isPending)
     return (

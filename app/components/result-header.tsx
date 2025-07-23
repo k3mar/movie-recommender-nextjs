@@ -1,16 +1,20 @@
 "use client";
 import { useRecommendation } from "@/context/RecommendationContext";
+import Image from "next/image";
 import SearchError from "../assets/search-error.svg";
 
-interface ResultHeaderProps {}
-
-const ResultHeader = ({}: ResultHeaderProps) => {
+const ResultHeader = () => {
   const { isError } = useRecommendation();
   return (
     <h2 className="flex justify-center gap-3  text-center text-3xl font-bold  mb-6 mt-4">
       {isError ? (
         <>
-          <img src={SearchError} alt="movie clapper" className="w-10" />
+          <Image
+            src="/svg/search-error.svg"
+            alt="Clapper"
+            width={40}
+            height={40}
+          />
           Trouble Casting Today’s Feature
         </>
       ) : (

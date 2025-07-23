@@ -1,10 +1,10 @@
 "use client";
 
-import usefetchRecommendation from "@/lib/UseFetchRecommendations";
+import useFetchRecommendation from "@/lib/UseFetchRecommendations";
 import { useQueryClient } from "@tanstack/react-query";
 import { createContext, useContext, type ReactNode } from "react";
 
-type RecommendationContextType = ReturnType<typeof usefetchRecommendation>;
+type RecommendationContextType = ReturnType<typeof useFetchRecommendation>;
 
 const RecommendationContext = createContext<
   RecommendationContextType | undefined
@@ -16,7 +16,7 @@ export const RecommendationProvider = ({
   children: ReactNode;
 }) => {
   const queryClient = useQueryClient();
-  const mutation = usefetchRecommendation(queryClient);
+  const mutation = useFetchRecommendation(queryClient);
 
   return (
     <RecommendationContext.Provider value={mutation}>

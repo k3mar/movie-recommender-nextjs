@@ -14,15 +14,16 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import useDataStore from "@/lib/dataStore";
 import Summary from "./summary";
-import { supabase } from "@/lib/supabaseClient";
-import { toast } from "sonner";
 import { motion } from "motion/react";
 import { Menu } from "lucide-react";
 import DarkModeToggle from "./customized/switch/switch-dark-mode";
+import { toast } from "sonner";
+import { format } from "date-fns";
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {}
-
-export default function Hero({ className = "", ...props }: Props) {
+export default function Hero({
+  className = "", // eslint-disable-line @typescript-eslint/no-unused-vars
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
@@ -40,8 +41,17 @@ export default function Hero({ className = "", ...props }: Props) {
   const session = useDataStore((state) => state.session);
 
   const handleSignOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    toast.error(error?.message);
+    const res = await fetch("/api/signout", { method: "POST" });
+    console.log("status", res.status);
+    if (res.ok) {
+      window.location.href = "/signin";
+    } else {
+      const date = new Date();
+      const formattedDate = format(date, "EEEE, MMMM do 'at' h:mmaaa");
+      toast.error("Error during signout process", {
+        description: formattedDate,
+      });
+    }
   };
 
   return (
@@ -134,7 +144,7 @@ export default function Hero({ className = "", ...props }: Props) {
                 <Button
                   type="submit"
                   onClick={handleSignOut}
-                  className="cursor-pointer hover:bg-blue-500/50 font-black text-blue-950 dark:text-white"
+                  className="cursor-pointer hover:bg-blue-500/50 font-black text-blue-950 dark:text-white mx-2 transition-transform transform hover:scale-105 active:scale-95"
                 >
                   Sign Out
                 </Button>
@@ -144,7 +154,7 @@ export default function Hero({ className = "", ...props }: Props) {
           </div>
           <div className="text-center mt-5">
             <motion.h1 className="inline-block text-2xl font-josefin font-extrabold tracking-tight text-balance">
-              What's your mood?
+              Whats your mood?
             </motion.h1>
           </div>
           <div className="flex justify-center max-h-screen">
@@ -155,7 +165,6 @@ export default function Hero({ className = "", ...props }: Props) {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ ease: "easeOut", duration: 1 }}
             >
-              {/*overlay*/}
               <div className="absolute  inset-0 dark:bg-black/75 z-30 rounded-3xl" />
               <div className="relative  z-40 h-full  flex flex-col justify-around">
                 <div>

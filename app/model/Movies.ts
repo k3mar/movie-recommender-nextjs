@@ -59,9 +59,9 @@ export interface Videos {
 }
 
 export interface Images {
-  backdrops: Record<string, any>[];
-  logos: Record<string, any>[];
-  posters: Record<string, any>[];
+  backdrops: Record<string, any>[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+  logos: Record<string, any>[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+  posters: Record<string, any>[]; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 export interface TMDBMovie {

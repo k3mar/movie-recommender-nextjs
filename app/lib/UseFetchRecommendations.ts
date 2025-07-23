@@ -4,13 +4,13 @@ import { useMutation, QueryClient } from "@tanstack/react-query";
 import type HttpError from "../model/HttpError";
 import type { RecommendationResponse, UserRequest } from "../model/Movies";
 import { API_BASE_URL } from "./constants";
-import { supabase } from "./supabaseClient";
+import { supabase } from "./supabase/browserClient";
 import { toast } from "sonner";
 import { format } from "date-fns";
 import { StatusCodes } from "http-status-codes";
 import useDataStore from "./dataStore";
 
-const usefetchRecommendation = (queryClient: QueryClient) => {
+const useFetchRecommendation = (queryClient: QueryClient) => {
   const setDisplayResults = useDataStore((state) => state.setDisplayResults);
 
   return useMutation<RecommendationResponse, HttpError, UserRequest>({
@@ -23,11 +23,12 @@ const usefetchRecommendation = (queryClient: QueryClient) => {
         const timeoutId = setTimeout(() => controller.abort(), 20000); // 10 sec
 
         const accessToken = session?.access_token;
+        console.log("Token", accessToken);
         const response = await fetch(API_BASE_URL + "/recommendation", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + (accessToken || ""),
+            Authorization: "Bearer " + (accessToken || "xyz"),
           },
           body: JSON.stringify(request),
           signal: controller.signal,
@@ -67,4 +68,4 @@ const usefetchRecommendation = (queryClient: QueryClient) => {
   });
 };
 
-export default usefetchRecommendation;
+export default useFetchRecommendation;
