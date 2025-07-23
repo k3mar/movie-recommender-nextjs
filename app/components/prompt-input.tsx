@@ -6,10 +6,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormField, FormItem, FormControl, FormMessage } from "./ui/form";
 import z from "zod";
 import { Textarea } from "./ui/textarea";
-import Clapper from "../assets/movie-clapper.svg";
 import { useRecommendation } from "@/context/RecommendationContext";
 import { AninmatedButton } from "./animated/animated";
 import { v4 as uuidv4 } from "uuid";
+import Image from "next/image";
 
 const formSchema = z.object({
   query: z.string().nonempty({
@@ -61,7 +61,12 @@ function PromptInput() {
           whileHover={{ scale: 1.1 }}
         >
           Match My Mood
-          <Clapper className="w-5 h-5" />
+          <Image
+            src="/svg/movie-clapper.svg"
+            alt="Clapper"
+            width={20}
+            height={20}
+          />
         </AninmatedButton>
       </form>
     </Form>

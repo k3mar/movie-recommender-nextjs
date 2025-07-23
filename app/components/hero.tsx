@@ -154,7 +154,7 @@ export default function Hero({
           </div>
           <div className="text-center mt-5">
             <motion.h1 className="inline-block text-2xl font-josefin font-extrabold tracking-tight text-balance">
-              What&apos;s your mood?
+              Whats your mood?
             </motion.h1>
           </div>
           <div className="flex justify-center max-h-screen">
@@ -165,7 +165,6 @@ export default function Hero({
               animate={{ opacity: 1, scale: 1 }}
               transition={{ ease: "easeOut", duration: 1 }}
             >
-              {/*overlay*/}
               <div className="absolute  inset-0 dark:bg-black/75 z-30 rounded-3xl" />
               <div className="relative  z-40 h-full  flex flex-col justify-around">
                 <div>
