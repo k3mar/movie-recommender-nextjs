@@ -7,7 +7,8 @@ WORKDIR /app
 # Install dependencies and build
 COPY . .
 COPY .env.template .env.local
-RUN npm run build
+RUN npm install && npm run build
+
 
 # ========================
 # Runtime stage
