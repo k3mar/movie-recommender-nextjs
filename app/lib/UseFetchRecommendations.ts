@@ -10,7 +10,7 @@ import { format } from "date-fns";
 import { StatusCodes } from "http-status-codes";
 import useDataStore from "./dataStore";
 
-const usefetchRecommendation = (queryClient: QueryClient) => {
+const useFetchRecommendation = (queryClient: QueryClient) => {
   const setDisplayResults = useDataStore((state) => state.setDisplayResults);
 
   return useMutation<RecommendationResponse, HttpError, UserRequest>({
@@ -68,4 +68,4 @@ const usefetchRecommendation = (queryClient: QueryClient) => {
   });
 };
 
-export default usefetchRecommendation;
+export default useFetchRecommendation;

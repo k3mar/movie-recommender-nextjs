@@ -17,10 +17,13 @@ import Summary from "./summary";
 import { motion } from "motion/react";
 import { Menu } from "lucide-react";
 import DarkModeToggle from "./customized/switch/switch-dark-mode";
+import { toast } from "sonner";
+import { format } from "date-fns";
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {}
-
-export default function Hero({ className = "", ...props }: Props) {
+export default function Hero({
+  className = "", // eslint-disable-line @typescript-eslint/no-unused-vars
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
@@ -39,8 +42,16 @@ export default function Hero({ className = "", ...props }: Props) {
 
   const handleSignOut = async () => {
     const res = await fetch("/api/signout", { method: "POST" });
-    window.location.href = "/signin";
-    // handle response
+    console.log("status", res.status);
+    if (res.ok) {
+      window.location.href = "/signin";
+    } else {
+      const date = new Date();
+      const formattedDate = format(date, "EEEE, MMMM do 'at' h:mmaaa");
+      toast.error("Error during signout process", {
+        description: formattedDate,
+      });
+    }
   };
 
   return (
@@ -143,7 +154,7 @@ export default function Hero({ className = "", ...props }: Props) {
           </div>
           <div className="text-center mt-5">
             <motion.h1 className="inline-block text-2xl font-josefin font-extrabold tracking-tight text-balance">
-              What's your mood?
+              What&apos;s your mood?
             </motion.h1>
           </div>
           <div className="flex justify-center max-h-screen">

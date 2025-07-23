@@ -1,11 +1,5 @@
 "use client";
-import Image from "next/image";
 import Hero from "./components/hero";
-import { useEffect } from "react";
-import useDataStore from "./lib/dataStore";
-import PageLoader from "./components/page-loader";
-import { supabase } from "./lib/supabase/browserClient";
-import SignIn from "./components/signin";
 import ResultSection from "./components/result-section";
 import { RecommendationProvider } from "./context/RecommendationContext";
 import { AnimatePresence, motion } from "motion/react";

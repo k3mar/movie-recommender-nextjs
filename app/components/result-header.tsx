@@ -2,9 +2,7 @@
 import { useRecommendation } from "@/context/RecommendationContext";
 import SearchError from "../assets/search-error.svg";
 
-interface ResultHeaderProps {}
-
-const ResultHeader = ({}: ResultHeaderProps) => {
+const ResultHeader = () => {
   const { isError } = useRecommendation();
   return (
     <h2 className="flex justify-center gap-3  text-center text-3xl font-bold  mb-6 mt-4">

@@ -37,7 +37,7 @@ export const ResultGrid = ({ movies }: Props) => {
   // Track the current slide (1-based index)
   const [currentSlide, setCurrentSlide] = useState(1);
   const [slideCount, setSlideCount] = useState(0);
-  let isSingleSlide = slideCount <= 1;
+  const isSingleSlide = slideCount <= 1;
 
   useEffect(() => {
     if (!api) {

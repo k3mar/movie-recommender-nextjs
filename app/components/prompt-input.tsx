@@ -17,9 +17,7 @@ const formSchema = z.object({
   }),
 });
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {}
-
-function PromptInput({}: Props) {
+function PromptInput() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
