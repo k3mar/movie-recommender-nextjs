@@ -34,11 +34,12 @@ jobs:
         env:
           IMAGE_TAG: web-${{ github.sha }}
         run: |
-          IMAGE_URI=${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:$IMAGE_TAG
+          IMAGE_URI=${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}
 
           echo "🔧 Building Docker image: $IMAGE_URI"
 
           docker build -t $IMAGE_URI .
 
           echo "Pushing image to ECR..."
-          docker push $IMAGE_URI
+          docker push $IMAGE_URI:$IMAGE_TAG
+          docker push $IMAGE_URI:latest
