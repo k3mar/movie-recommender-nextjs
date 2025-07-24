@@ -1,4 +1,4 @@
-import ServerSignIn from "@/components/serverSignIn";
+import ServerSignIn from "@/components/ServerSignIn";
 import React from "react";
 
 export default function LoginPage() {

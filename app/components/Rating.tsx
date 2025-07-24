@@ -5,11 +5,13 @@ type RatingProps = {
   size?: number;
 };
 
-export function Rating({ value }: RatingProps) {
+const Rating = ({ value }: RatingProps) => {
   return (
     <div className="flex gap-1 justify-end">
       <IoStarSharp size={20} className="text-yellow-300" />
       <span>{value}</span>
     </div>
   );
-}
+};
+
+export default Rating;
