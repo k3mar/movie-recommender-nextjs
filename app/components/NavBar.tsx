@@ -2,7 +2,7 @@ import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import DarkModeToggle from "@/components/customized/switch/switch-dark-mode";
+import DarkModeToggle from "@/components/customized/switch/SwitchDarkMode";
 import Summary from "@/components/summary";
 import {
   NavigationMenu,

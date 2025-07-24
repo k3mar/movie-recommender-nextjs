@@ -1,7 +1,6 @@
 "use client";
 import { useRecommendation } from "@/context/RecommendationContext";
 import Image from "next/image";
-import SearchError from "../assets/search-error.svg";
 
 const ResultHeader = () => {
   const { isError } = useRecommendation();

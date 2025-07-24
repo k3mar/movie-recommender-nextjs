@@ -1,6 +1,6 @@
 "use client";
 import type { ReactNode } from "react";
-import { AninmatedButton } from "./animated/animated";
+import { AninmatedButton } from "@/components/animated/AnimatedComponents";
 
 interface JumpToProps {
   children: ReactNode;

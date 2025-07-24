@@ -1,14 +1,14 @@
 "use client";
 
 import { useMutation, QueryClient } from "@tanstack/react-query";
-import type HttpError from "../models/HttpError";
-import type { RecommendationResponse, UserRequest } from "../models/Movies";
-import { API_BASE_URL } from "../lib/constants";
-import { supabase } from "../lib/supabase/browserClient";
+import type HttpError from "@/models/HttpError";
+import type { RecommendationResponse, UserRequest } from "@/models/Movies";
+import { API_BASE_URL } from "@/lib/constants";
+import { supabase } from "@/lib/supabase/browserClient";
 import { toast } from "sonner";
 import { format } from "date-fns";
 import { StatusCodes } from "http-status-codes";
-import useDataStore from "./useDataStore";
+import useDataStore from "@/hooks/useDataStore";
 
 const useFetchRecommendation = (queryClient: QueryClient) => {
   const setDisplayResults = useDataStore((state) => state.setDisplayResults);

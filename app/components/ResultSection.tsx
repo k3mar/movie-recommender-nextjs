@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import ResultHeader from "./ResultHeader";
-import Reason from "./Reason";
-import { ResultGrid } from "./ResultsGrid";
-import { LoadingGrid } from "./LoadingGrid";
-import ErrorSection from "./ErrorSection";
-import { Toaster } from "./ui/sonner";
+import ResultHeader from "@/components/ResultHeader";
+import Reason from "@/components/Reason";
+import { ResultGrid } from "@/components/ResultsGrid";
+import { LoadingGrid } from "@/components/LoadingGrid";
+import ErrorSection from "@/components/ErrorSection";
+import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import { useRecommendation } from "@/context/RecommendationContext";
-import JumpTo from "./JumpTo";
+import JumpTo from "@/components/JumpTo";
 
 const ResultSection = ({
   className,
