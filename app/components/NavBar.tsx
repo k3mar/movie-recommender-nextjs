@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Menu } from "lucide-react";
 import useDataStore from "@/hooks/useDataStore";
+import Link from "next/link";
 
 interface NavBarProps {
   session?: {
@@ -41,23 +42,21 @@ const NavBar = ({ onSignOut }: NavBarProps) => {
       >
         <NavigationMenuList className="h-10 md:text-2xl text-base font-bold">
           <NavigationMenuItem>
-            <NavigationMenuLink
-              className="active:bg-red-700/50"
-              href="https://github.com/k3mar/movie-recommender"
-            >
-              <span className="hover:border-b-4 border-indigo-500/90 pb-0">
-                MovieRecommender
-              </span>
+            <NavigationMenuLink className="active:bg-red-700/50" asChild>
+              <Link href="/">
+                <span className="hover:border-b-4 border-indigo-500/90 pb-0">
+                  MovieRecommender
+                </span>
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              className="active:bg-red-700/50"
-              href="https://www.google.com"
-            >
-              <span className="hover:border-b-4 border-indigo-500/90 pb-0">
-                About
-              </span>
+            <NavigationMenuLink className="active:bg-red-700/50" asChild>
+              <Link href="/about">
+                <span className="hover:border-b-4 border-indigo-500/90 pb-0">
+                  About
+                </span>
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -68,22 +67,22 @@ const NavBar = ({ onSignOut }: NavBarProps) => {
             <NavigationMenuTrigger disableChevron={true}>
               <Menu />
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="bg-black/70 backdrop-blur-2xl pb-6">
+            <NavigationMenuContent className="dark:bg-black/70  bg-blue-700/70 backdrop-blur-2xl pb-6">
               <ul className="grid w-[175px] gap-4">
                 <li>
                   <NavigationMenuLink asChild>
-                    <a href="#">
+                    <Link href="/">
                       <span className="hover:border-b-4 border-indigo-500/90 pb-0">
                         MovieRecommender
                       </span>
-                    </a>
+                    </Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
-                    <a href="#">
+                    <Link href="/about">
                       <span className="hover:border-b-4 border-indigo-500/90 pb-0">
                         About
                       </span>
-                    </a>
+                    </Link>
                   </NavigationMenuLink>
                 </li>
               </ul>

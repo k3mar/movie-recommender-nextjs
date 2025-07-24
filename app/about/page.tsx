@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div>
       <Hero>
-        <section className="mt-5 w-fit mx-auto bg-black/40 p-5 rounded-3xl ">
+        <section className="mt-5 w-fit mx-auto dark:bg-black/40 bg-slate-500/40 p-5 rounded-3xl  backdrop-blur-lg ">
           <h1 className="text-center mb-5 text-xl font-bold">
             🎬 MovieRecommender – Mood-Based Movie Recommender
           </h1>
