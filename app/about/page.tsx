@@ -7,12 +7,12 @@ export default function About() {
       <Hero>
         <section className="mt-5 w-fit mx-auto dark:bg-black/40 bg-slate-500/40 p-5 rounded-3xl  backdrop-blur-lg ">
           <h1 className="text-center mb-5 text-xl font-bold">
-            🎬 MovieRecommender – Mood-Based Movie Recommender
+            🎬 MovieRecommender - Mood-Based Movie Recommender
           </h1>
           <p>
             <strong>Description:</strong> A web app that recommends movies based
-            on your current mood using OpenAI's language model, enriched with
-            TMDB metadata.
+            on your current mood using OpenAI&apos;s language model, enriched
+            with TMDB metadata.
           </p>
 
           <h2 className="mt-2">🧱 Tech Stack</h2>
