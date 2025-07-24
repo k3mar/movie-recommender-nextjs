@@ -1,6 +1,6 @@
 "use client";
 
-import useFetchRecommendation from "@/lib/UseFetchRecommendations";
+import useFetchRecommendation from "@/hooks/useFetchRecommendations";
 import { useQueryClient } from "@tanstack/react-query";
 import { createContext, useContext, type ReactNode } from "react";
 

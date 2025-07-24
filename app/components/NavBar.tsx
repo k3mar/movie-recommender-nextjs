@@ -13,7 +13,7 @@ import {
   NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
 import { Menu } from "lucide-react";
-import useDataStore from "@/lib/dataStore";
+import useDataStore from "@/hooks/useDataStore";
 
 interface NavBarProps {
   session?: {

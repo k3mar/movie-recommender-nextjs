@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import type { Movie } from "../model/Movies";
-import { Rating } from "./rating";
+import type { Movie } from "../models/Movies";
+import { Rating } from "./Rating";
 import Summary from "./summary";
 import { AspectRatio } from "./ui/aspect-ratio";
 import { CardContent, CardDescription, CardTitle } from "./ui/card";

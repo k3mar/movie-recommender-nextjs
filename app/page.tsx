@@ -1,9 +1,9 @@
 "use client";
-import Hero from "./components/hero";
-import ResultSection from "./components/result-section";
+import Hero from "./components/Hero";
+import ResultSection from "./components/ResultSection";
 import { RecommendationProvider } from "./context/RecommendationContext";
 import { AnimatePresence, motion } from "motion/react";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PromptSection from "./components/PromptSection";
 

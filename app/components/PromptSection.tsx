@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import React, { useEffect, useState } from "react";
-import PromptInput from "./prompt-input";
+import PromptInput from "./PromptInput";
 
 const PromptSection = () => {
   const [opacity, setOpacity] = useState(1);
