@@ -1,12 +1,12 @@
 "use client";
 import type { ReactNode } from "react";
-import { AninmatedButton } from "./animated/animated";
+import { AninmatedButton } from "@/components/animated/AnimatedComponents";
 
 interface JumpToProps {
   children: ReactNode;
 }
 
-function JumpTo({ children }: JumpToProps) {
+const JumpTo = ({ children }: JumpToProps) => {
   const scrollToSection = () => {
     document.getElementById("prompt")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -22,6 +22,6 @@ function JumpTo({ children }: JumpToProps) {
       </AninmatedButton>
     </div>
   );
-}
+};
 
 export default JumpTo;

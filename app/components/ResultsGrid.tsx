@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import type { Movie } from "../model/Movies";
-import { Rating } from "./rating";
-import Summary from "./summary";
-import { AspectRatio } from "./ui/aspect-ratio";
-import { CardContent, CardDescription, CardTitle } from "./ui/card";
+import type { Movie } from "@/models/Movies";
+import Rating from "@/components/Rating";
+import Summary from "@/components/Summary";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -12,7 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "./ui/carousel";
+} from "@/components/ui/carousel";
 import {
   Dialog,
   DialogClose,
@@ -22,9 +22,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog";
-import NoImage from "../assets/no_image.png";
-import { AninmatedCard } from "./animated/animated";
+} from "@/components/ui/dialog";
+import NoImage from "@/assets/no_image.png";
+import { AninmatedCard } from "@/components/animated/AnimatedComponents";
 import { TMDB_WEBSITE_URL } from "@/lib/constants";
 
 const TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";

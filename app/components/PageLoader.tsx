@@ -2,7 +2,7 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { motion } from "motion/react";
 
-function PageLoader() {
+const PageLoader = () => {
   return (
     <motion.div
       className="flex items-center h-screen w-screen justify-center bg-slate-700 dark:bg-black"
@@ -14,6 +14,6 @@ function PageLoader() {
       <DotLottieReact className="w-100 " src="/camera.lottie" loop autoplay />
     </motion.div>
   );
-}
+};
 
 export default PageLoader;

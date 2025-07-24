@@ -7,7 +7,7 @@ import { Form, FormField, FormItem, FormControl, FormMessage } from "./ui/form";
 import z from "zod";
 import { Textarea } from "./ui/textarea";
 import { useRecommendation } from "@/context/RecommendationContext";
-import { AninmatedButton } from "./animated/animated";
+import { AninmatedButton } from "./animated/AnimatedComponents";
 import { v4 as uuidv4 } from "uuid";
 import Image from "next/image";
 
@@ -17,7 +17,7 @@ const formSchema = z.object({
   }),
 });
 
-function PromptInput() {
+const PromptInput = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -71,6 +71,6 @@ function PromptInput() {
       </form>
     </Form>
   );
-}
+};
 
 export default PromptInput;
