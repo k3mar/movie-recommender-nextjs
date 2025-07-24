@@ -17,7 +17,7 @@ const formSchema = z.object({
   }),
 });
 
-function PromptInput() {
+const PromptInput = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -71,6 +71,6 @@ function PromptInput() {
       </form>
     </Form>
   );
-}
+};
 
 export default PromptInput;

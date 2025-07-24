@@ -8,11 +8,11 @@ interface HeroProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-export default function Hero({
+const Hero = ({
   children,
   className = "", // eslint-disable-line @typescript-eslint/no-unused-vars
   ...props
-}: HeroProps) {
+}: HeroProps) => {
   const handleSignOut = async () => {
     const res = await fetch("/api/signout", { method: "POST" });
     console.log("status", res.status);
@@ -40,4 +40,6 @@ export default function Hero({
       </div>
     </section>
   );
-}
+};
+
+export default Hero;

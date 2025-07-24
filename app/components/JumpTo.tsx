@@ -6,7 +6,7 @@ interface JumpToProps {
   children: ReactNode;
 }
 
-function JumpTo({ children }: JumpToProps) {
+const JumpTo = ({ children }: JumpToProps) => {
   const scrollToSection = () => {
     document.getElementById("prompt")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -22,6 +22,6 @@ function JumpTo({ children }: JumpToProps) {
       </AninmatedButton>
     </div>
   );
-}
+};
 
 export default JumpTo;

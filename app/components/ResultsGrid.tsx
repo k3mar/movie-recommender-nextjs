@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import type { Movie } from "@/models/Movies";
-import { Rating } from "@/components/Rating";
+import Rating from "@/components/Rating";
 import Summary from "@/components/summary";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { CardContent, CardDescription, CardTitle } from "@/components/ui/card";
