@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Movie Recommender",
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-mono text-white bg-white dark:bg-black`}>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );

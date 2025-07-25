@@ -67,7 +67,6 @@ export default function About() {
           </ul>
         </section>
       </Hero>
-      <Footer></Footer>
     </div>
   );
 }

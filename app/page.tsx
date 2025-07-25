@@ -3,7 +3,6 @@ import Hero from "./components/Hero";
 import ResultSection from "./components/ResultSection";
 import { RecommendationProvider } from "./context/RecommendationContext";
 import { AnimatePresence, motion } from "motion/react";
-import Footer from "./components/Footer";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PromptSection from "./components/PromptSection";
 
@@ -24,7 +23,6 @@ export default function Home() {
               <PromptSection />
             </Hero>
             <ResultSection />
-            <Footer></Footer>
           </RecommendationProvider>
         </motion.div>
       </AnimatePresence>
