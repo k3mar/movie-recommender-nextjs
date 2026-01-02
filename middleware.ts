@@ -1,52 +1,46 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
-import { createClient } from "@/lib/supabase/serverClient";
 
 export async function middleware(request: NextRequest) {
-  const path = request.nextUrl.pathname;
-  const method = request.method;
-  const timestamp = new Date().toISOString();
+  const response = NextResponse.next();
 
-  console.log(`[MIDDLEWARE] ${timestamp} — ${method} ${path} — Checking auth`);
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set(name, value, options);
+          });
+        },
+      },
+    }
+  );
 
-  const supabase = await createClient();
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser();
-
-  if (error) {
-    console.warn(
-      `[MIDDLEWARE] ${timestamp} — Error fetching user: ${error.message}`
-    );
-  }
+  const { data: { user } } = await supabase.auth.getUser();
 
   if (!user) {
-    const redirectUrl = new URL("/signin", request.url);
-    redirectUrl.searchParams.set("redirectedFrom", path);
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = "/signin";
 
-    console.log(
-      `[MIDDLEWARE] ${timestamp} — No user. Redirecting to /signin from ${path}`
-    );
-    return NextResponse.redirect(redirectUrl);
+    // IMPORTANT: return response that still carries cookies
+    return NextResponse.redirect(redirectUrl, {
+      headers: response.headers,
+    });
   }
 
-  console.log(
-    `[MIDDLEWARE] ${timestamp} — Authenticated user: ${user.email || user.id}`
-  );
-  return NextResponse.next();
+  return response;
 }
 
 export const config = {
   matcher: [
     /*
-     * Match all request paths except:
-     * - /api routes
-     * - /_next/static (build files)
-     * - /_next/image (image optimization)
-     * - /favicon.ico and other static files
+     * Protect everything except auth routes
      */
-    "/",
-    "/about",
+    "/((?!signin|api|_next|favicon.ico).*)",
   ],
 };
